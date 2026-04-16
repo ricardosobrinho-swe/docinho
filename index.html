@@ -1,14 +1,58 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hello World</title>
-  <link href='/style.css' rel='stylesheet'>
+  <meta charset="UTF-8">
+  <title>Para uma linda garota - Te Amo Meu Amor ❤️</title>
+  <style>
+    body {
+      background: #eeabab;
+      color: #f5f5f5;
+      font-family: 'Courier New', monospace;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    #text {
+      font-size: 1.5rem;
+      border-right: 2px solid #f5f5f5;
+      padding-right: 5px;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+
+    .cursor {
+      animation: blink 0.7s infinite;
+    }
+
+    @keyframes blink {
+      50% {
+        border-color: transparent;
+      }
+    }
+  </style>
 </head>
 <body>
-  <h1>Hello, world!</h1>
-  <button onclick="console.log('hello');">Press me</button>
-  <script defer type="text/javascript" src="/main.js"></script>
+
+  <div id="text" class="cursor"></div>
+
+  <script>
+    const frase = "No momento, não posso te dar um beijinho, mas espero que goste muito do docinho ❤️.";
+    const elemento = document.getElementById("text");
+
+    let i = 0;
+
+    function escrever() {
+      if (i < frase.length) {
+        elemento.textContent += frase.charAt(i);
+        i++;
+        setTimeout(escrever, 50); // velocidade da digitação
+      }
+    }
+
+    escrever();
+  </script>
+
 </body>
 </html>
